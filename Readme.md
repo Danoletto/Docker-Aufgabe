@@ -1,6 +1,46 @@
 # Notizen
 
 
+## Nächste aufgaben:
+    -   Moodle intgrierung fertigstellen.
+    -   Nextcloud Server Fehler fixen
+    -   Redis, wie integriere ich es mit Moodle?
+        -   Redis + php.dll, kann ich soetwas installieren. Wenn ja, wie ?
+        -   Funktioniert es überhaupt mit Nextcloud? Wie teste ich sowas.
+    
+
+
+
+    -   LDAP Funktioniert, User können erstellt werden und man kann sich bei Moodle & Nextcloud anmelden.
+    -   Mariadb Speichert alle Datenbanken so wie sie soll.
+    -   Alle Container und Images sind persistent.
+    -   Init = true" ist nicht gut, lol
+    -   Alle Container befinden sich im selben Netz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### Setup MariaDB:
 ```Docker
 docker run -d --name moodledb -v mariadb-data:/var/lib/mariadb --network back_Netzwerk -e "MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true" -e MARIADB_USER=Admin -e "MARIADB_PASSWORD=Admin" -e "MARIADB_DATABASE=moodle" mariadb
