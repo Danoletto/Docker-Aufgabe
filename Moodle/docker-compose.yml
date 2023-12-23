@@ -1,0 +1,23 @@
+version: '3'
+networks:
+  WirDockenAn:
+    external: true
+services:
+  moodle:
+    image: bitnami/moodle:latest
+    ports:
+      - '82:8080'
+      - '443:8443'
+    environment:
+      - EXTRA_LOCALES=fr_FR.UTF-8 UTF-8, de_DE.UTF-8 UTF-8, it_IT.UTF-8 UTF-8, es_ES.UTF-8 UTF-8
+      - MOODLE_DATABASE_HOST=db
+      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_NAME=moodle
+      - MOODLE_DATABASE_USER=MoUser
+      - MOODLE_DATABASE_PASSWORD=MoUser
+    volumes:
+      - ./data/moodledata-data:/bitnami/moodledata
+      - ./data/bitnami-data:/bitnami/apache/conf
+      - ./data/moodle_data:/bitnami/moodle
+    networks:
+      - WirDockenAn

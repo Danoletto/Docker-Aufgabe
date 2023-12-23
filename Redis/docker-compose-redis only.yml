@@ -1,0 +1,13 @@
+version: '3'
+networks:
+  WirDockenAn:
+    external: true
+services:
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - ./data/bitnami/redis-persistence:/bitnami/redis/data  
+    networks:
+      - WirDockenAn

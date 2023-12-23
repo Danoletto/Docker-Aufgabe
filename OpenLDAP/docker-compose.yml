@@ -1,0 +1,27 @@
+version: '3'
+networks:
+  Netzwerk:
+    name: WirDockenAn
+    driver: bridge
+services:
+  openldap:
+    # latest, da es seit 3 Jahren keine updates bekommt.
+    image: osixia/openldap:latest
+    container_name: openldap2
+    env_file: .env
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./data/certificates:/var/lib/ldap
+      - ./data/slapd/database:/etc/ldap/slapd.d
+      - ./data/slapd/config:/container/service/slapd/assets/certs/ 
+    ports:
+      - "389:389"
+      - "636:636"
+    # For replication to work correctly, domainname and hostname must be
+    # set correctly so that "hostname"."domainname" equates to the
+    # fully-qualified domain name for the host.
+    domainname: "wirdockenan.local"
+    hostname: "ldap-server"
+    networks:
+      - Netzwerk

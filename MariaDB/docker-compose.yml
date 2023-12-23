@@ -1,0 +1,28 @@
+version: '3'
+networks:
+  WirDockenAn:
+    external: true
+services: 
+  db:
+    image: mariadb:latest
+    restart: always
+    volumes:
+      - ./data/mariadb-data:/var/lib/mariadb
+      - ./data/mysql-data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: Admin
+      MARIADB_DATABASE: Nextcloud
+      MARIADB_USER: NcUser
+      MARIADB_PASSWORD: NcUser
+    networks:
+      - WirDockenAn
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    networks:
+      - WirDockenAn
+    ports:
+      - 80:8080

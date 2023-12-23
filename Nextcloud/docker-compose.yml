@@ -1,0 +1,23 @@
+version: '3'
+networks:
+  WirDockenAn:
+    external: true
+services:
+  app:
+    image: nextcloud:latest
+    restart: always
+    container_name: Nextcloud
+    volumes:
+      - ./data/nextcloud:/var/www/html
+    environment:
+      - MYSQL_DATABASE Nextcloud
+      - MYSQL_USER NcUser
+      - MYSQL_PASSWORD NcUser
+      - MYSQL_HOST mariadb
+      - NEXTCLOUD_MEMORY_LIMIT 2048M
+      - REDIS_HOST=redis
+      - REDIS_HOST_PASSWORD=redis
+    networks:
+      - WirDockenAn
+    ports:
+      - "81:80"
