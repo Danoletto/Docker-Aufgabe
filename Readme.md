@@ -56,7 +56,7 @@ docker run -d --name moodle -p 81:8080 -p 443:8443 -v moodle-data:/bitnami/moodl
 ```Docker
 init: true
 ```
-Beispiel Nexcloud, diese Zeile starten den installations Prozess von Nextcloud, bei einem Neustart des Containers, neu. \ erstmal rauslassen.
+Beispiel Nexcloud, diese Zeile starten den installations Prozess von Nextcloud, bei einem Neustart des Containers, neu. ⚠️ erstmal rauslassen.
 
 ## OpenLDAP
 
