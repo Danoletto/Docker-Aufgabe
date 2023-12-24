@@ -18,4 +18,4 @@ services:
     networks:
       - WirDockenAn
     ports:
-      - "81:80"
+      - "80:80"

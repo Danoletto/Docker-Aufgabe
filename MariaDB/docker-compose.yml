@@ -25,4 +25,4 @@ services:
     networks:
       - WirDockenAn
     ports:
-      - 80:8080
+      - 1337:8080

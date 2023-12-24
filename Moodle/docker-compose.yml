@@ -6,7 +6,8 @@ services:
   moodle:
     image: bitnami/moodle:latest
     ports:
-      - '82:8080'
+    # Benutze nur mit port 443  
+    # - '82:8080'
       - '443:8443'
     environment:
       - EXTRA_LOCALES=fr_FR.UTF-8 UTF-8, de_DE.UTF-8 UTF-8, it_IT.UTF-8 UTF-8, es_ES.UTF-8 UTF-8
