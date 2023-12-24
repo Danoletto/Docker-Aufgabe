@@ -1,26 +1,27 @@
-version: "3.7"
+version: '3'
 networks:
   WirDockenAn:
     external: true
 services:
   redis:
     image: redis:latest
+    restart: always
     ports:
       - 6379:6379
-    command: ["redis-server", "--appendonly", "yes"]
-    volumes:
-      - ./data/redis-data:/data
+    command: redis-server --save 20 1 --loglevel warning --requirepass redis
+    volumes: 
+      - ./data/redis:/data
     networks:
       - WirDockenAn
-  redis-commander:
-    image: rediscommander/redis-commander:latest
-    environment:
-      - REDIS_HOSTS=local:redis:6379
-      - HTTP_USER=Admin
-      - HTTP_PASSWORD=Admin
-    ports:
-      - 8081:8081
-    depends_on:
-      - redis
-    networks:
-      - WirDockenAn
+#  redis-commander:
+#    image: rediscommander/redis-commander:latest
+#    environment:
+#      - REDIS_HOSTS=redis:6379
+#      - HTTP_USER=Admin
+#      - HTTP_PASSWORD=Admin
+#    ports:
+#      - 8081:8081
+#    depends_on:
+#      - redis
+#    networks:
+#      - WirDockenAn

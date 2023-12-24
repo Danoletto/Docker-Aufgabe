@@ -18,7 +18,6 @@ services:
       - MOODLE_DATABASE_PASSWORD=MoUser
     volumes:
       - ./data/moodledata-data:/bitnami/moodledata
-      - ./data/bitnami-data:/bitnami/apache/conf
       - ./data/moodle_data:/bitnami/moodle
     networks:
       - WirDockenAn

@@ -18,29 +18,6 @@
     -   Alle Container befinden sich im selben Netz.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Setup MariaDB:
 ```Docker
 docker run -d --name moodledb -v mariadb-data:/var/lib/mariadb --network back_Netzwerk -e "MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true" -e MARIADB_USER=Admin -e "MARIADB_PASSWORD=Admin" -e "MARIADB_DATABASE=moodle" mariadb
@@ -58,18 +35,11 @@ init: true
 ```
 Beispiel Nexcloud, diese Zeile starten den installations Prozess von Nextcloud, bei einem Neustart des Containers, neu. \ erstmal rauslassen.
 
-## OpenLDAP
+## OpenLDAP Login
 
-|login:|cn=admin,cd=example,cd=org|
-| - | - 
-|password:|Admin|
-
-
-
-
-
-
-
+login|password
+-|-
+cn...|Admin
 
 # Links
 
