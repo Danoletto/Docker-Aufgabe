@@ -1,5 +1,6 @@
 # Notizen
 
+###### https://github.com/Danoletto/Docker-Aufgabe/blob/c6b141ef3767e6f19a2376884f85dff0572cf602/Readme.md?plain=1#L59C1-L59C1
 
 ## Nächste aufgaben:
     -   Moodle intgrierung fertigstellen.
@@ -31,7 +32,7 @@ docker run -d --name moodle -p 81:8080 -p 443:8443 -v moodle-data:/bitnami/moodl
 ```Docker
 init: true
 ```
-Beispiel Nexcloud, diese Zeile starten den installations Prozess von Nextcloud, bei einem Neustart des Containers, neu. ⚠️ erstmal rauslassen.
+Beispiel Nextcloud, diese Zeile starten den installations Prozess von Nextcloud, bei einem Neustart des Containers, neu. ⚠️ erstmal rauslassen.
 
 ## OpenLDAP Login
 
@@ -79,3 +80,10 @@ https://docs.moodle.org/403/en/LDAP_authentication#Enabling_LDAP_authentication
 
 Docker-Compose file
 https://geshan.com.np/blog/2022/01/redis-docker/
+
+
+## Git help
+
+https://blog.mergify.com/what-is-the-difference-between-a-merge-commit-a-squash/
+https://stackoverflow.com/questions/2427238/what-is-the-difference-between-merge-squash-and-rebase
+https://github.blog/2016-04-01-squash-your-commits/
