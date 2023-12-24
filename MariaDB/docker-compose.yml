@@ -4,7 +4,7 @@ networks:
     external: true
 services: 
   db:
-    image: mariadb:latest
+    image: mariadb:11.2.2
     restart: always
     volumes:
       - ./data/mariadb-data:/var/lib/mariadb

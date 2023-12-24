@@ -4,7 +4,7 @@ networks:
     external: true
 services:
   app:
-    image: nextcloud:latest
+    image: nextcloud:28.0
     restart: always
     container_name: Nextcloud
     volumes:

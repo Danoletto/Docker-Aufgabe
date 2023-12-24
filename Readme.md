@@ -8,9 +8,7 @@
         -   Redis + php.dll, kann ich soetwas installieren. Wenn ja, wie ?
         -   Funktioniert es überhaupt mit Nextcloud? Wie teste ich sowas.
     
-
-
-
+    Funktioniert schonmal:
     -   LDAP Funktioniert, User können erstellt werden und man kann sich bei Moodle & Nextcloud anmelden.
     -   Mariadb Speichert alle Datenbanken so wie sie soll.
     -   Alle Container und Images sind persistent.
@@ -52,6 +50,9 @@ https://www.techrepublic.com/article/how-to-populate-an-ldap-server-with-users-a
 ###### https://hub.docker.com/r/osixia/openldap
 
 ---
+### <u>mariadb</u>
+######  https://hub.docker.com/_/mariadb
+---
 ### <u>Nextcloud</u>
 ###### https://hub.docker.com/_/nextcloud
 How to connect Nextcloud with openLDAP
@@ -67,6 +68,7 @@ https://help.nextcloud.com/t/nextcloud-aio-docker-change-php-memory-limit-values
 
 ---
 ### <u>Moodle</u>
+###### https://hub.docker.com/r/bitnami/moodle
 
 Moodle openLDAP integration
 https://docs.moodle.org/403/en/LDAP_authentication#Enabling_LDAP_authentication

@@ -4,7 +4,7 @@ networks:
     external: true
 services:
   redis:
-    image: redis:latest
+    image: redis:7.2.3
     restart: always
     ports:
       - 6379:6379

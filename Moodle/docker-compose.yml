@@ -4,7 +4,7 @@ networks:
     external: true
 services:
   moodle:
-    image: bitnami/moodle:latest
+    image: bitnami/moodle:4.3.2
     ports:
     # Benutze nur mit port 443  
     # - '82:8080'
