@@ -40,6 +40,11 @@ login|password
 -|-
 cn...|Admin
 
+
+login|password
+-|-
+admin|Admin123!
+
 # Links
 
 ### <u>openLDAP</u>
