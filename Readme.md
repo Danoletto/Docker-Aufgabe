@@ -38,7 +38,7 @@ Beispiel Nextcloud, diese Zeile starten den installations Prozess von Nextcloud,
 
 login|password
 -|-
-cn...|Admin
+cn=admin,dc=wirdockenan,dc=local|Admin
 
 
 login|password
@@ -76,9 +76,14 @@ https://help.nextcloud.com/t/nextcloud-aio-docker-change-php-memory-limit-values
 ### <u>Moodle</u>
 ###### https://hub.docker.com/r/bitnami/moodle
 
+Github zu docker-compose
+https://github.com/ubc/moodle-docker
+
 Moodle openLDAP integration
 https://docs.moodle.org/403/en/LDAP_authentication#Enabling_LDAP_authentication
 
+Redis installation
+https://docs.moodle.org/402/en/Redis_cache_store
 ---
 ### <u>Redis</u>
 ###### https://hub.docker.com/_/redis
