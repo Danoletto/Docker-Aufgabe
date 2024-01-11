@@ -16,7 +16,6 @@ services:
       - MYSQL_HOST mariadb
       - NEXTCLOUD_MEMORY_LIMIT 2048M
       - REDIS_HOST=redis
-      - REDIS_HOST_PASSWORD=redis
     networks:
       - WirDockenAn
     ports:

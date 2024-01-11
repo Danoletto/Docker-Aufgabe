@@ -4,15 +4,25 @@ networks:
     external: true
 services:
   redis:
-    image: redis:7.2.3
-    restart: always
+    image: redis:5.0-alpine
+    volumes:
+      - ./.data/redis:/data
     ports:
       - 6379:6379
-    command: redis-server --save 20 1 --loglevel warning --requirepass redis
-    volumes: 
-      - ./data/redis:/data
     networks:
       - WirDockenAn
+
+#  redis:
+#    image: redis:7.2.3
+#    restart: always
+#    ports:
+#      - 6379:6379
+#    command: redis-server --save 20 1 --loglevel warning --requirepass redis
+#  volumes: 
+#      - ./data/redis:/data
+
+
+
 #  redis-commander:
 #    image: rediscommander/redis-commander:latest
 #    environment:
