@@ -1,17 +1,17 @@
 version: '3'
 networks:
-  WirDockenAn:
+  wirdockenan.local:
     external: true
 services:
   moodle:
     image: bitnami/moodle:4.3.2
     ports:
-    # Benutze nur mit port 443  
+    # Benutze nur port 443  
     # - '82:8080'
       - '443:8443'
     environment:
-      - MOODLE_DATABASE_HOST=db
-      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_HOST=mo-mariadb
+      - MOODLE_DATABASE_PORT_NUMBER=3366
       - MOODLE_DATABASE_NAME=moodle
       - MOODLE_DATABASE_USER=MoUser
       - MOODLE_DATABASE_PASSWORD=MoUser
@@ -22,4 +22,20 @@ services:
       - ./data/moodle_data:/bitnami/moodle
       - ./data/httpd/httpd.conf:/opt/bitnami/apache/conf/httpd.conf
     networks:
-      - WirDockenAn
+      - wirdockenan.local
+
+  mo-mariadb:
+    image: mariadb:11.2.2
+    restart: always
+    volumes:
+      - ./data/mariadb-data:/var/lib/mariadb
+      - ./data/mysql-data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: Admin
+      MARIADB_DATABASE: moodle
+      MARIADB_USER: MoUser
+      MARIADB_PASSWORD: MoUser
+    networks:
+      - wirdockenan.local
+    ports:
+      - 3366:3306

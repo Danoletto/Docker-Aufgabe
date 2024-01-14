@@ -1,13 +1,12 @@
 version: '3'
 networks:
-  Netzwerk:
-    name: WirDockenAn
-    driver: bridge
+  WirDockenAn:
+    external: true
 services:
   openldap:
     # latest, da es seit 3 Jahren keine updates bekommt.
     image: osixia/openldap:latest
-    container_name: openldap2
+    container_name: openldap
     env_file: .env
     tty: true
     stdin_open: true
@@ -22,6 +21,6 @@ services:
     # set correctly so that "hostname"."domainname" equates to the
     # fully-qualified domain name for the host.
     domainname: "wirdockenan.local"
-    hostname: "ldap-server"
+    hostname: "ldap.wirdockenan.de"
     networks:
-      - Netzwerk
+      - wirdockenan.local

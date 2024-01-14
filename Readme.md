@@ -1,3 +1,12 @@
+# Getting started
+
+
+## Netzwerk erstellen
+```docker
+$ docker network create -d bridge wirdockenan.local
+```
+###### https://docs.docker.com/engine/reference/commandline/network_create/
+
 # Notizen
 
 ###### https://github.com/Danoletto/Docker-Aufgabe/blob/c6b141ef3767e6f19a2376884f85dff0572cf602/Readme.md?plain=1#L59C1-L59C1
