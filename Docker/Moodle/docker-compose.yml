@@ -10,14 +10,16 @@ services:
     # - '82:8080'
       - '443:8443'
     environment:
-      - EXTRA_LOCALES=fr_FR.UTF-8 UTF-8, de_DE.UTF-8 UTF-8, it_IT.UTF-8 UTF-8, es_ES.UTF-8 UTF-8
       - MOODLE_DATABASE_HOST=db
       - MOODLE_DATABASE_PORT_NUMBER=3306
       - MOODLE_DATABASE_NAME=moodle
       - MOODLE_DATABASE_USER=MoUser
       - MOODLE_DATABASE_PASSWORD=MoUser
+      - PHP_ENABLE_OPCACHE=true
+      - PHP_MEMORY_LIMIT=512M
     volumes:
       - ./data/moodledata-data:/bitnami/moodledata
       - ./data/moodle_data:/bitnami/moodle
+      - ./data/httpd/httpd.conf:/opt/bitnami/apache/conf/httpd.conf
     networks:
       - WirDockenAn
