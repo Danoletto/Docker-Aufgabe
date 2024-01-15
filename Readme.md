@@ -3,7 +3,7 @@
 
 ## Netzwerk erstellen
 ```docker
-$ docker network create -d bridge wirdockenan.local
+$ docker network create -d bridge wirdockenan
 ```
 ###### https://docs.docker.com/engine/reference/commandline/network_create/
 
