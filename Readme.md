@@ -4,7 +4,7 @@
 Der Erste Schritt ist es ein Persistentes Netzwerk zu erstellen.
 Dieses nennen wir, in diesem Fall, "wirdockenan.local"
 ```docker
-$ docker network create -d bridge wirdockenan.local
+$ docker network create -d bridge wirdockenan
 ```
 ###### https://docs.docker.com/engine/reference/commandline/network_create/
 
