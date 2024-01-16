@@ -53,6 +53,16 @@ Wir loggen uns als Admin im LDAP ein, dort erstellen wir eine neue Gruppe in uns
 Damit haben wir dann ein LDAP Server mit Gruppen und Usern.
 
 
+## Nextcloud
+
+Die erste Initialisierung von Nextcloud ist dafür da, um einen Admin Account zu erstellen und die Datenbank zu verbindung.
+Unser Gewählter Admin Account ist in der Login Liste ist zu finden.
+Verbindung zu Mariadb wird hergestellt indem man den Nutzer und das Passwort sowie entsprechende Datenbank und mariadb-server:port einträgt. 
+
+
+
+Um die LDAP integration in Nextcloud hinzuzufügen. Muss man zuerst die LDAP-Integrations App aktivieren unter dem Reiter "Apps".
+
 
 
 
