@@ -1,0 +1,12 @@
+version: '3'
+networks:
+  wirdockenan.local:
+    external: true
+services:
+  adminer:
+    image: adminer
+    restart: always
+    networks:
+      - wirdockenan.local
+    ports:
+      - 8008:8080

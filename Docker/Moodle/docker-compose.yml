@@ -11,7 +11,7 @@ services:
       - '443:8443'
     environment:
       - MOODLE_DATABASE_HOST=mo-mariadb
-      - MOODLE_DATABASE_PORT_NUMBER=3366
+      - MOODLE_DATABASE_PORT_NUMBER=3306
       - MOODLE_DATABASE_NAME=moodle
       - MOODLE_DATABASE_USER=MoUser
       - MOODLE_DATABASE_PASSWORD=MoUser
@@ -20,7 +20,7 @@ services:
     volumes:
       - ./data/moodledata-data:/bitnami/moodledata
       - ./data/moodle_data:/bitnami/moodle
-      - ./data/httpd/httpd.conf:/opt/bitnami/apache/conf/httpd.conf
+    # - ./data/httpd/httpd.conf:/opt/bitnami/apache/conf/httpd.conf
     networks:
       - wirdockenan.local
 
@@ -38,4 +38,4 @@ services:
     networks:
       - wirdockenan.local
     ports:
-      - 3366:3306
+      - 3306:3306

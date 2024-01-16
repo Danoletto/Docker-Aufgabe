@@ -15,11 +15,11 @@ services:
       - MYSQL_PASSWORD NcUser
       - MYSQL_HOST nc-mariaddb
       - NEXTCLOUD_MEMORY_LIMIT 2048M
-    # - REDIS_HOST=redis
+      - REDIS_HOST=redis
     networks:
       - wirdockenan.local
     ports:
-      - "80:80"
+      - "88:80"
 
   nc-mariadb:
     image: mariadb:11.2.2
@@ -27,12 +27,20 @@ services:
     volumes:
       - ./data/mariadb-data:/var/lib/mariadb
       - ./data/mysql-data:/var/lib/mysql
+    # Hatte damit versucht den Port zu ändern.
+    # - type: bind
+    #   source: ./data/mariadb-conf/mariadb.cnf
+    #   target: /etc/mysql/mariadb.cnf
     environment:
       MARIADB_ROOT_PASSWORD: Admin
       MARIADB_DATABASE: Nextcloud
       MARIADB_USER: NcUser
       MARIADB_PASSWORD: NcUser
+    # Dieser ist es. Damit hat er den Port geändert.
+      MYSQL_TCP_PORT: 3366
     networks:
       - wirdockenan.local
     ports:
-      - 3306:3306
+      - 3366:3306
+    expose:
+      - 3366

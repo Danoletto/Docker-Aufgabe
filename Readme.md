@@ -1,11 +1,79 @@
 # Getting started
 
-
 ## Netzwerk erstellen
+Der Erste Schritt ist es ein Persistentes Netzwerk zu erstellen.
+Dieses nennen wir, in diesem Fall, "wirdockenan.local"
 ```docker
 $ docker network create -d bridge wirdockenan.local
 ```
 ###### https://docs.docker.com/engine/reference/commandline/network_create/
+
+## Die Container
+Wir haben 5 Ordner mit jeweils 5 docker Compose Dateien.
+Die Unterpunkte geben aus, welche Images in jedem Container laufen.
+
+- OpenLDAP
+- phpLDAPadmin
+- Nextcloud
+    - Nextcloud
+    - Mariadb
+- Moodle
+    - Moodle
+    - Mariadb
+- Redis
+- adminer
+
+### Logins
+
+|              |           Benutzername           | Passwort |        Link:Port       |
+|:------------:|:--------------------------------:|:--------:|:----------------------:|
+|   openLDAP   | cn=admin,dc=wirdockenan,dc=local |   admin  |          :389          |
+| phpLDAPadmin |                /                 |          | http://localhost:8080/ |
+|   Nextcloud  |              Admin               |   Admin  |  http://localhost:88/  |
+|  nc-mariadb  |              NcUser              |  NcUser  |          :3366         |
+|    Moodle    |                                  |          | https://localhost:443/ |
+|  mo-mariadb  |              MoUser              |  MoUser  |          :3306         |
+|     redis    |               redis              |     /    |                        |
+|    adminer   |               root               |   Admin  | http://localhost:8008/ |
+
+
+
+## OpenLDAP und phpLDAPadmin
+
+Beginnen wir mit dem OpenLDAP als Backend und dem phpLDAPadmin als Frontend.
+
+Wir loggen uns als Admin im LDAP ein, dort erstellen wir eine neue Gruppe in unserer Domaine
+
+1. "Create a Child entry"
+2. "Organisational Unit" Diese Unit nennen wir "groups" und erstellen sie
+3. In ou=groups erstellen wir verschiedene Posix Group: "administrator; developers; users"
+4. diese "Posix Groups" können wir mit den jeweiligen "Generic: User Account" füllen
+5. Dann fügen wir noch eine memberUid hinzu, die gleich dem UID der jeweiligen Nutzer ist.
+
+Damit haben wir dann ein LDAP Server mit Gruppen und Usern.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Notizen
 
@@ -45,20 +113,11 @@ Beispiel Nextcloud, diese Zeile starten den installations Prozess von Nextcloud,
 
 ## OpenLDAP Login
 
-login|password
--|-
-cn=admin,dc=wirdockenan,dc=local|Admin
-
-
-login|password
--|-
-admin|Admin123!
-
 # Links
 
 ### <u>openLDAP</u>
 ###### https://hub.docker.com/r/osixia/openldap
-https://www.techrepublic.com/article/how-to-populate-an-ldap-server-with-users-and-groups-via-phpldapadmin/
+###### https://www.techrepublic.com/article/how-to-populate-an-ldap-server-with-users-and-groups-via-phpldapadmin/
 
 ---
 ### <u>phpLDAPadmin</u>

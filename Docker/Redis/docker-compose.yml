@@ -1,0 +1,13 @@
+version: '2'
+networks:
+  wirdockenan.local:
+    external: true
+services:
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - ./data/Redis:/bitnami/redis/data
+    networks:
+      - wirdockenan.local
