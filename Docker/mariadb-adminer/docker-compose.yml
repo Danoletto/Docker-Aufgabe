@@ -3,6 +3,7 @@ networks:
   wirdockenan.local:
     external: true
 services:
+  # Wird genutzt um beide MariaDB Datenbanken überschauen zu können.
   adminer:
     image: adminer
     restart: always

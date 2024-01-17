@@ -54,9 +54,9 @@ Damit haben wir dann ein LDAP Server mit Gruppen und Usern.
 
 ## Nextcloud
 
-Die erste Initialisierung von Nextcloud ist dafür da, um einen Admin Account zu erstellen und die Datenbank zu verbindung.
+Die erste Initialisierung von Nextcloud ist dafür da, um einen Admin Account zu erstellen und die Datenbank zu verbinden.
 Unser Gewählter Admin Account ist in der Login Liste ist zu finden.
-Verbindung zu Mariadb wird hergestellt indem man den Nutzer und das Passwort sowie entsprechende Datenbank und mariadb-server:port einträgt.
+Verbindung zu Mariadb wird hergestellt indem man den Nutzer und das Passwort, sowie die entsprechende Datenbank und den mariadb-server:port einträgt.
 
 Um die LDAP integration in Nextcloud hinzuzufügen. Muss man zuerst die LDAP-Integrations App aktivieren unter dem Reiter "Apps".
 
@@ -66,8 +66,6 @@ Um die LDAP integration in Nextcloud hinzuzufügen. Muss man zuerst die LDAP-Int
 
 ## Nächste aufgaben
 
-    -   Moodle intgrierung fertigstellen.
-    -   Nextcloud Server Fehler fixen
     -   Redis, wie integriere ich es mit Moodle?
         -   Redis + php.dll, kann ich soetwas installieren. Wenn ja, wie ?
         -   Funktioniert es überhaupt mit Nextcloud? Wie teste ich sowas.

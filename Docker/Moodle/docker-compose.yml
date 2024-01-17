@@ -26,6 +26,7 @@ services:
     volumes:
       - ./data/moodledata-data:/bitnami/moodledata
       - ./data/moodle_data:/bitnami/moodle
+    # Falls man in der httpd.conf Code ändern möchte muss man ihm zuerst eine lokal bestehende datei mappen
     # - ./data/httpd/httpd.conf:/opt/bitnami/apache/conf/httpd.conf
     networks:
       - wirdockenan.local
