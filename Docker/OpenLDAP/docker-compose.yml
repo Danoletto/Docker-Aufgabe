@@ -1,6 +1,6 @@
 version: '3'
 networks:
-  wirdockenan.local:
+  bb2leer.local:
     external: true
 services:
   openldap:
@@ -20,7 +20,7 @@ services:
     # For replication to work correctly, domainname and hostname must be
     # set correctly so that "hostname"."domainname" equates to the
     # fully-qualified domain name for the host.
-    domainname: "wirdockenan.local"
-    hostname: "ldap.wirdockenan.de"
+    domainname: "bb2leer.local"
+    hostname: "ldap.bb2leer.de"
     networks:
-      - wirdockenan.local
+      - bb2leer.local

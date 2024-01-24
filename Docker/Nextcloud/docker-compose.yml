@@ -1,6 +1,6 @@
 version: '3'
 networks:
-  wirdockenan.local:
+  bb2leer.local:
     external: true
 services:
   app:
@@ -17,7 +17,7 @@ services:
       - NEXTCLOUD_MEMORY_LIMIT 2048M
       - REDIS_HOST=redis
     networks:
-      - wirdockenan.local
+      - bb2leer.local
     ports:
       - "80:80"
 
@@ -27,19 +27,15 @@ services:
     volumes:
       - ./data/mariadb-data:/var/lib/mariadb
       - ./data/mysql-data:/var/lib/mysql
-    # Hatte damit versucht den Port zu ändern.
-    # - type: bind
-    #   source: ./data/mariadb-conf/mariadb.cnf
-    #   target: /etc/mysql/mariadb.cnf
     environment:
       MARIADB_ROOT_PASSWORD: Admin
       MARIADB_DATABASE: Nextcloud
+    # Hier können die Login Daten der Nextcloud Datenbank geändert werden
       MARIADB_USER: NcUser
       MARIADB_PASSWORD: NcUser
-    # Dieser ist es. Damit hat er den Port geändert.
       MYSQL_TCP_PORT: 3366
     networks:
-      - wirdockenan.local
+      - bb2leer.local
     ports:
       - 3366:3306
     expose:

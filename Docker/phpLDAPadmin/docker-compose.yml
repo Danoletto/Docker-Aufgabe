@@ -1,6 +1,6 @@
 version: '3'
 networks:
-  wirdockenan.local:
+  bb2leer.local:
     external: true
 services:
   phpldapadmin:
@@ -15,4 +15,4 @@ services:
     ports:
       - "8080:80"
     networks:
-      - wirdockenan.local
+      - bb2leer.local

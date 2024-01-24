@@ -1,6 +1,6 @@
 version: '2'
 networks:
-  wirdockenan.local:
+  bb2leer.local:
     external: true
 services:
   redis:
@@ -8,8 +8,9 @@ services:
     environment:
   # nur für Test zwecke
   # - ALLOW_EMPTY_PASSWORD=yes
+  # - Redis Server Passwort kann hier geändert werden
     - REDIS_PASSWORD=redis
     volumes:
       - ./data/Redis:/bitnami/redis/data
     networks:
-      - wirdockenan.local
+      - bb2leer.local

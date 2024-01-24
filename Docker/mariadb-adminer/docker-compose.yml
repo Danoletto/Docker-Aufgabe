@@ -1,6 +1,6 @@
 version: '3'
 networks:
-  wirdockenan.local:
+  bb2leer.local:
     external: true
 services:
   # Wird genutzt um beide MariaDB Datenbanken überschauen zu können.
@@ -8,6 +8,6 @@ services:
     image: adminer
     restart: always
     networks:
-      - wirdockenan.local
+      - bb2leer.local
     ports:
       - 8008:8080

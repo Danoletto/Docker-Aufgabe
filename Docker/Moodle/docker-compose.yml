@@ -1,6 +1,6 @@
 version: '3'
 networks:
-  wirdockenan.local:
+  bb2leer.local:
     external: true
 services:
   moodle:
@@ -11,14 +11,17 @@ services:
     environment:
     # Diesen Code nur Auskommentieren, wenn eine Moodle Datenbank schon existiert.
       - MOODLE_SKIP_BOOTSTRAP
+    # - Hier können Nutzername und Passwort vom Admin Login geändert werden
       - MOODLE_USERNAME=Admin
       - MOODLE_PASSWORD=Admin
       - MOODLE_SITE_NAME=BBS II Moodle
       - MOODLE_DATABASE_HOST=mo-mariadb
       - MOODLE_DATABASE_PORT_NUMBER=3306
       - MOODLE_DATABASE_NAME=moodle
-      - MOODLE_DATABASE_USER=MoUser
-      - MOODLE_DATABASE_PASSWORD=MoUser
+    # - MOODLE_CRON_MINUTES
+    # Hier können Nutzername und Passwort von der MariaDB Datenbank geändert werden
+    # - MOODLE_DATABASE_USER=MoUser
+    # - MOODLE_DATABASE_PASSWORD=MoUser
     # - MOODLE_LANG=de
       - PHP_ENABLE_OPCACHE=true
       - PHP_MEMORY_LIMIT=512M
@@ -28,7 +31,7 @@ services:
     # Falls man in der httpd.conf Code ändern möchte muss man ihm zuerst eine lokal bestehende datei mappen
     # - ./data/httpd/httpd.conf:/opt/bitnami/apache/conf/httpd.conf
     networks:
-      - wirdockenan.local
+      - bb2leer.local
 
   mo-mariadb:
     image: mariadb:11.2.2
@@ -42,6 +45,6 @@ services:
       MARIADB_USER: MoUser
       MARIADB_PASSWORD: MoUser
     networks:
-      - wirdockenan.local
+      - bb2leer.local
     ports:
       - 3306:3306
