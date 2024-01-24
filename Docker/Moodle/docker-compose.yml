@@ -5,22 +5,21 @@ networks:
 services:
   moodle:
     image: bitnami/moodle:4.3.2
-    ports:
-    # Benutze nur port 443  
-    # - '82:8080'
+    ports:  
+      - '82:8080'
       - '443:8443'
     environment:
     # Diesen Code nur Auskommentieren, wenn eine Moodle Datenbank schon existiert.
-    # - MOODLE_SKIP_BOOTSTRAP
+      - MOODLE_SKIP_BOOTSTRAP
       - MOODLE_USERNAME=Admin
       - MOODLE_PASSWORD=Admin
-      - MOODLE_SITE_NAME=WirDockenAn Moodle
+      - MOODLE_SITE_NAME=BBS II Moodle
       - MOODLE_DATABASE_HOST=mo-mariadb
       - MOODLE_DATABASE_PORT_NUMBER=3306
       - MOODLE_DATABASE_NAME=moodle
       - MOODLE_DATABASE_USER=MoUser
       - MOODLE_DATABASE_PASSWORD=MoUser
-      - MOODLE_LANG=de
+    # - MOODLE_LANG=de
       - PHP_ENABLE_OPCACHE=true
       - PHP_MEMORY_LIMIT=512M
     volumes:

@@ -59,6 +59,12 @@ Unser Gewählter Admin Account ist in der Login Liste ist zu finden.
 Verbindung zu Mariadb wird hergestellt indem man den Nutzer und das Passwort, sowie die entsprechende Datenbank und den mariadb-server:port einträgt.
 
 Um die LDAP integration in Nextcloud hinzuzufügen. Muss man zuerst die LDAP-Integrations App aktivieren unter dem Reiter "Apps".
+Danach geht man in die Verwaltungseinstellungen, unter dem Reiter "Verwaltung" findet man nun die LDAP-Integration.
+In der LDAP-Integration, trägt man den LDAP-Server ein, in diesem fall ist es der Container name "openldap", danach kann man den Port 389 ermitteln.
+Unter den Anmeldedaten trägt man den Account ein, mit dem sich Nextcloud in LDAP einloggen soll.
+In den darauffolgenden Seiten der konfiguration, Kann man genau bestimmen, welche Benutzergruppen zugriff auf Nextcloud haben und kann dies nach belieben ausfüllen.
+
+Sobald alle Notwendigen Felder ausgefüllt sind und die Konfigurationen Benutzer und Gruppen gefunden hat, ist Nextcloud mit openldap integriert.
 
 # Notizen
 
@@ -100,8 +106,6 @@ init: true
 ```
 
 Beispiel Nextcloud, diese Zeile starten den installations Prozess von Nextcloud, bei einem Neustart des Containers, neu. ⚠️ erstmal rauslassen.
-
-## OpenLDAP Login
 
 # Links
 

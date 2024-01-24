@@ -19,7 +19,7 @@ services:
     networks:
       - wirdockenan.local
     ports:
-      - "88:80"
+      - "80:80"
 
   nc-mariadb:
     image: mariadb:11.2.2

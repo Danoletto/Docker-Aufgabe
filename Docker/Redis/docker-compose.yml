@@ -6,7 +6,9 @@ services:
   redis:
     image: 'bitnami/redis:latest'
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
+  # nur für Test zwecke
+  # - ALLOW_EMPTY_PASSWORD=yes
+    - REDIS_PASSWORD=redis
     volumes:
       - ./data/Redis:/bitnami/redis/data
     networks:
