@@ -161,7 +161,7 @@ Redis installation
 
 ### <u>Redis</u>
 
-###### <https://hub.docker.com/bitnami/redis>
+###### <https://hub.docker.com/r/bitnami/redis>
 
 Docker-Compose file
 <https://geshan.com.np/blog/2022/01/redis-docker/>
